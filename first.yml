@@ -1,0 +1,15 @@
+--- # first playbook
+- hosts: webservers
+  become: yes
+  user: ansible
+  connection: ssh
+
+  tasks:
+    - name: Install httpd s/w in hosts
+      action: yum name=httpd state=present
+
+    - name: Install tree s/w in hosts
+      yum:
+        pkg: tree
+        state: present
+
