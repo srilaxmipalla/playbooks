@@ -1,0 +1,18 @@
+--- # creating handlers:dependency s/w
+- name: handlers creates dependency b/w s/w & service
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install httpd s/w on hosts
+      action: yum name=httpd state=present
+      notify: service HTTPD start
+    - name: copying a index.html file
+      copy:
+        src: /home/ansible/playbooks/index.html
+        dest: /var/www/html
+
+  handlers: 
+    - name: service HTTPD start
+      action: service name=httpd state=started
+      
+      

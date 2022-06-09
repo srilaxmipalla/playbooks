@@ -5,8 +5,8 @@
   connection: ssh
 
   tasks:
-  - name: creating a file
-    file:
-      path: /home/ansible/newfile
-      state: file
+    - name: creating a file
+      file:
+        path: /home/ansible/testfile
+        state: file
 

@@ -1,0 +1,16 @@
+--- #INSTALL multiple packages 
+- hosts: webservers
+  become: yes
+  user: ansible
+  connection: ssh
+  tasks:
+   - name: instaling multiple s/ws
+     yum: 
+       name: '{{item}}'
+       state: present
+     with_items:
+          - httpd
+          - tree
+          - java
+          - wget
+

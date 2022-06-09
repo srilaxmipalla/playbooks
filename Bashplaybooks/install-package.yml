@@ -1,0 +1,10 @@
+---
+- name: Install docker s/w in hosts
+  hosts: all
+  become: true
+  tasks:
+  - name: Install docker s/w
+    yum:
+      name: docker
+      state: present
+

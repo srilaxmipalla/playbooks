@@ -1,0 +1,10 @@
+--- # install multiple packages
+- hosts: all
+  become: yes
+  user: ansible
+  connection: ssh
+  tasks:
+    - name: installing multiple packages
+      yum: 
+        name: ['git','docker','which','httpd','tree'] 
+        state: present

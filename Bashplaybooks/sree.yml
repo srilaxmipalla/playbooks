@@ -1,0 +1,17 @@
+--- # creating file directory in playbook
+- hosts: all
+  become: yes
+  tasks:
+    - name: creating a file
+      file:
+        path: /home/ansible/projectfile
+        state: file
+    - name: creating a directory
+      file:
+        path: /home/ansible/awsdirectory
+        state: directory
+    - name: copying a file
+      copy:
+        src: /home/ansible/playbooks/apachefile
+        dest: /home/ansible
+

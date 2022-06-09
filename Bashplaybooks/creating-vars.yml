@@ -1,0 +1,12 @@
+--- # creating variable section
+- hosts: all
+  become: yes
+  user: ansible
+  connection: ssh
+
+  vars:
+    pkgname: mysql
+  tasks:
+    - name: Insatall mysql on hosts
+      action: yum name='{{pkgname}}' state=present
+   

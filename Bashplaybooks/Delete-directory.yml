@@ -1,0 +1,10 @@
+--- # creating a directory
+- hosts: all
+  become: yes
+  user: ansible
+  connection: ssh
+  tasks:
+    - name: creating a directory
+      file:
+        path: /home/ansible/awsdirectory
+        state: absent
